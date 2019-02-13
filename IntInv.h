@@ -17,11 +17,9 @@ class IntInvUI:public QWidget {
     void createLayout();
     void createLabel();
     void createButton();
-    bool check();
     QLineEdit *Base, *MOD;
     QLabel *BaseText, *MODText, *Ans;
     QPushButton *BtnCancel, *BtnOK;
-    char *BaseStr, *MODStr;
     ll Bs, Md;
     
     public slots:

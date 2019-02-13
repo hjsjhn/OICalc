@@ -1,5 +1,6 @@
 #include "log2.h"
 #include "calcMath.h"
+#include "tool.h"
 #include <QMessageBox>
 #include <QDesktopWidget>
 #include <Qt>
@@ -69,30 +70,9 @@ void LogtUI::CancelLog () {
 }
 
 void LogtUI::OKLog () {
-    if (!(this -> check())) {
+    if (!TransQStringToLL(this -> Base -> text(), Bs)) {
         QMessageBox::warning(NULL, "Warning!", "不合法的输入", QMessageBox::Yes);
     } else {
-        ll answer = log_2(Bs);
-        char AnsStr[1300], pos = 0;
-        memset(AnsStr, 0, sizeof(AnsStr));
-        while (answer)
-            AnsStr[pos++] = (int)(answer % 10LL) + '0', answer /= 10LL;
-        reverse(AnsStr, AnsStr + pos);
-        QString qstr = QString(QLatin1String(AnsStr));
-        Ans -> setText(qstr);
+        Ans -> setText(TransLLToQString(log_2(Bs)));
     }
-}
-
-bool LogtUI::check() {
-    QByteArray str = (this -> Base -> text()).toLatin1();
-    BaseStr = str.data();
-    Bs = 0;
-    int pos = 0;
-    while (BaseStr[pos]) {
-        if (BaseStr[pos] < '0' || BaseStr[pos] > '9') return false;
-        Bs = Bs * 10LL + (ll)(BaseStr[pos] - '0');
-        ++pos;
-    }
-    if (pos == 0 && !BaseStr[pos]) return false;
-    return true;
 }

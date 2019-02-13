@@ -17,11 +17,9 @@ class IntFacUI:public QWidget {
     void createLayout();
     void createLabel();
     void createButton();
-    bool check();
     QLineEdit *Base;
     QLabel *BaseText, *Ans;
     QPushButton *BtnCancel, *BtnOK;
-    char *BaseStr;
     ll Bs;
     
     public slots:

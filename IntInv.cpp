@@ -1,5 +1,6 @@
 #include "IntInv.h"
 #include "calcMath.h"
+#include "tool.h"
 #include <QMessageBox>
 #include <QDesktopWidget>
 #include <Qt>
@@ -71,40 +72,9 @@ void IntInvUI::CancelIntInv () {
 }
 
 void IntInvUI::OKIntInv () {
-    if (!(this -> check())) {
+    if (!TransQStringToLL(this -> Base -> text(), Bs) || !TransQStringToLL(this -> MOD -> text(), Md)) {
         QMessageBox::warning(NULL, "Warning!", "不合法的输入", QMessageBox::Yes);
     } else {
-        ll answer = quick_pow(Bs, Md - (ll)2, Md);
-        char AnsStr[130], pos = 0;
-        memset(AnsStr, 0, sizeof(AnsStr));
-        while (answer)
-            AnsStr[pos++] = (int)(answer % 10LL) + '0', answer /= 10LL;
-        reverse(AnsStr, AnsStr + pos);
-        QString qstr = QString(QLatin1String(AnsStr));
-        Ans -> setText(qstr);
+        Ans -> setText(TransLLToQString(quick_pow(Bs, Md - (ll)2, Md)));
     }
-}
-
-bool IntInvUI::check() {
-    QByteArray str = (this -> Base -> text()).toLatin1();
-    BaseStr = str.data();
-    Bs = 0;
-    int pos = 0;
-    while (BaseStr[pos]) {
-        if (BaseStr[pos] < '0' || BaseStr[pos] > '9') return false;
-        Bs = Bs * 10LL + (ll)(BaseStr[pos] - '0');
-        ++pos;
-    }
-    if (pos == 0 && !BaseStr[pos]) return false;
-    str = (this -> MOD -> text()).toLatin1();
-    MODStr = str.data();
-    Md = 0;
-    pos = 0;
-    while (MODStr[pos]) {
-        if (MODStr[pos] < '0' || MODStr[pos] > '9') return false;
-        Md = Md * 10LL + (ll)(MODStr[pos] - '0');
-        ++pos;
-    }
-    if (pos == 0 && !MODStr[pos]) return false;
-    return true;
 }

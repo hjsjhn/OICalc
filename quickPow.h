@@ -17,11 +17,9 @@ class PowUI:public QWidget {
     void createLayout();
     void createLabel();
     void createButton();
-    bool check();
     QLineEdit *Base, *Index;
     QLabel *BaseText, *IndexText, *Ans;
     QPushButton *BtnCancel, *BtnOK;
-    char *BaseStr, *IndexStr;
     ll Bs, Idx;
     
     public slots:
