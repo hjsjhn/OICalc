@@ -28,3 +28,17 @@ cd OICalc
 qmake calc.pro
 make
 ```
+## 加入系统应用
+你可以将 OIcalc 加入系统应用然后支持在 dash 中直接打开  
+在 `/usr/share/applications/OIcalc.desktop`中加入
+``` plain
+[Desktop Entry]
+Name=OIcalc
+Comment=A Simple Calculator For OIer
+Exec="/path/to/OIcalc/OIcalc"
+Terminal=false
+Type=Application
+Icon=/path/to/OIcalc/OIcalc.ico
+Categories=Development;
+```
+注意不能直接复制，要将 `Exec` 和 `Icon` 里的 `/path/to/OIcalc` 替换为你的 OIcalc 所在目录
