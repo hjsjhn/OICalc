@@ -5,16 +5,9 @@ qmake calc.pro
 echo '[Desktop Entry]
 Name=OIcalc
 Comment=A Simple Calculator For OIer
-Exec="~/.local/bin/OIcalc"
+Exec="'`pwd`'/OIcalc"
 Terminal=false
 Type=Application
-Icon=~/.local/share/icons/OIcalc/OIcalc.ico
+Icon='`pwd`'/OIcalc.ico
 Categories=Development;' > /usr/share/applications/OIcalc.desktop
 make
-mkdir -p ~/.local
-mkdir -p ~/.local/share
-mkdir -p ~/.local/share/icons
-mkdir -p ~/.local/share/icons/OIcalc
-mkdir -p ~/.local/bin
-cp ./OIcalc.ico ~/.local/share/icons/OIcalc/
-cp ./OIcalc ~/.local/bin/
