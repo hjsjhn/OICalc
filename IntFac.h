@@ -17,10 +17,10 @@ class IntFacUI:public QWidget {
     void createLayout();
     void createLabel();
     void createButton();
-    QLineEdit *Base;
-    QLabel *BaseText, *Ans;
+    QLineEdit *Base, *MOD;
+    QLabel *BaseText, *MODText, *Ans;
     QPushButton *BtnCancel, *BtnOK;
-    ll Bs;
+    ll Bs, Md;
     
     public slots:
         void CancelIntFac();

@@ -33,9 +33,12 @@ ll log_2 (ll x) {
     return ans;
 }
 
-ll Fac (ll x) {
+ll Fac (ll x, ll MOD = -1) {
     ll ans = 1;
-    for (ll i = 2; i <= x; ++i)
+    for (ll i = 2; i <= x; ++i) {
         ans *= i;
+        if (MOD > 0)
+            ans %= MOD;
+    }
     return ans;
 }

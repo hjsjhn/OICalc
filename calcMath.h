@@ -9,4 +9,4 @@ ll quick_pow (ll, ll, ll MOD = -1);
 
 ll log_2 (ll);
 
-ll Fac (ll);
+ll Fac (ll, ll MOD = -1);
