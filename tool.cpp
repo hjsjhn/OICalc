@@ -27,6 +27,8 @@ QString TransLLToQString (ll Rt) {
     while (Rt)
         AnsStr[pos++] = (int)(Rt % 10LL) + '0', Rt /= 10LL;
     reverse(AnsStr, AnsStr + pos);
+    if (pos == 0 && !AnsStr[pos])
+        AnsStr[pos] = '0';
     QString qstr = QString(QLatin1String(AnsStr));
     return qstr;
 }

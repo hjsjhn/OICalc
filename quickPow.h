@@ -17,10 +17,10 @@ class PowUI:public QWidget {
     void createLayout();
     void createLabel();
     void createButton();
-    QLineEdit *Base, *Index;
-    QLabel *BaseText, *IndexText, *Ans;
+    QLineEdit *Base, *Index, *MOD;
+    QLabel *BaseText, *IndexText, *MODText, *Ans;
     QPushButton *BtnCancel, *BtnOK;
-    ll Bs, Idx;
+    ll Bs, Idx, Md;
     
     public slots:
         void CancelPow();
