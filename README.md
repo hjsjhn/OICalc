@@ -23,23 +23,24 @@
 ``` bash
 ./config
 ```
-## 依赖关系
+## 手动安装
+### 依赖关系
 ``` bash
 sudo apt-get install qt5-default qt5-qmake
 ```
-## 编译
+### 编译
 ``` bash
 git clone git@github.com:SysConKonn/OICalc.git
 cd OICalc
 qmake calc.pro
 make
 ```
-## 运行
+### 运行
 ``` bash
 chmod a+x OIcalc
 ./OIcalc
 ```
-## 加入系统应用
+### 加入系统应用
 你可以将 OIcalc 加入系统应用然后支持在 dash 中直接打开  
 在 `/usr/share/applications/OIcalc.desktop`中加入
 ``` plain
