@@ -2,6 +2,7 @@
 #include "quickPow.h"
 #include "log2.h"
 #include "IntInv.h"
+#include "IntFac.h"
 #include "calcMath.h"
 
 #include <QWidget>
@@ -44,12 +45,15 @@ void calc::createButton () {
     qpow = new QPushButton ( tr("整数快速幂"), this);
     logt = new QPushButton ( tr("Log(2)"), this);
     IntInv = new QPushButton ( tr("整数逆元"), this);
+    IntFac = new QPushButton ( tr("整数阶乘"), this);
     qpow -> setFixedHeight(40);
     logt -> setFixedHeight(40);
     IntInv -> setFixedHeight(40);
+    IntFac -> setFixedHeight(40);
     connect(qpow, SIGNAL(clicked()), this, SLOT(calcPow()));
     connect(logt, SIGNAL(clicked()), this, SLOT(calcLog()));
     connect(IntInv, SIGNAL(clicked()), this, SLOT(calcIntInv()));
+    connect(IntFac, SIGNAL(clicked()), this, SLOT(calcIntFac()));
 }
 
 void calc::calcPow () {
@@ -68,6 +72,12 @@ void calc::calcIntInv () {
     IntInvUI *IntInvNow;
     IntInvNow = new IntInvUI();
     IntInvNow -> show();
+}
+
+void calc::calcIntFac () {
+    IntFacUI *IntFacNow;
+    IntFacNow = new IntFacUI();
+    IntFacNow -> show();
 }
 
 void calc::createLayout () {
@@ -89,6 +99,7 @@ void calc::createLayout () {
     // delete hbox, Options;
     hbox = new QHBoxLayout();
     hbox -> addWidget(this -> IntInv);
+    hbox -> addWidget(this -> IntFac);
     Options = new QWidget();
     Options -> setLayout(hbox);
     vbox -> addWidget(Options);

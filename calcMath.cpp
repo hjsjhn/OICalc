@@ -32,3 +32,10 @@ ll log_2 (ll x) {
     }
     return ans;
 }
+
+ll Fac (ll x) {
+    ll ans = 1;
+    for (ll i = 2; i <= x; ++i)
+        ans *= i;
+    return ans;
+}
