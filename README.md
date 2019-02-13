@@ -16,6 +16,11 @@
 由于还在初步开发阶段，所以对于所有计算，过程中数的大小不能超过 2<sup>127</sup> - 1
 
 # 安装方法
+## 依赖关系
+``` bash
+sudo apt-get install qt5-default qt5-qmake
+```
+## 编译
 ``` bash
 git clone git@github.com:SysConKonn/OICalc.git
 cd OICalc
