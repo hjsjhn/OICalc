@@ -21,6 +21,7 @@
 可以选择手动安装或者用脚本安装
 ## 一键安装
 ``` bash
+chmod a+x config
 ./config
 ```
 ## 手动安装
