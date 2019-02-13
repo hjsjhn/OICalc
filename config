@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo apt-get install qt5-default qt5-qmake
+qmake calc.pro
+echo '[Desktop Entry]
+Name=OIcalc
+Comment=A Simple Calculator For OIer
+Exec="'`pwd`'/OIcalc"
+Terminal=false
+Type=Application
+Icon='`pwd`'/OIcalc.ico
+Categories=Development;' > ~/.local/share/applications/OIcalc.desktop
+make
