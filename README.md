@@ -29,6 +29,11 @@ cd OICalc
 qmake calc.pro
 make
 ```
+## 运行
+``` bash
+chmod a+x OIcalc
+./OIcalc
+```
 ## 加入系统应用
 你可以将 OIcalc 加入系统应用然后支持在 dash 中直接打开  
 在 `/usr/share/applications/OIcalc.desktop`中加入
@@ -43,3 +48,7 @@ Icon=/path/to/OIcalc/OIcalc.ico
 Categories=Development;
 ```
 注意不能直接复制，要将 `Exec` 和 `Icon` 里的 `/path/to/OIcalc` 替换为你的 OIcalc 所在目录
+
+# 软件截图
+Ubuntu 16.04 - Unity Desktop Environment  
+![screenshot](https://i.loli.net/2019/02/13/5c637552224b0.png)
